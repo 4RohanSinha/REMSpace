@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C7E235529C297F800D8820D /* ActivityRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E235429C297F800D8820D /* ActivityRecommender.swift */; };
+		1C7E235929C29AB200D8820D /* Activity+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E235829C29AB200D8820D /* Activity+Ext.swift */; };
 		1CF677F929BEDDB100B523E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF677F829BEDDB100B523E0 /* AppDelegate.swift */; };
 		1CF677FB29BEDDB100B523E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF677FA29BEDDB100B523E0 /* SceneDelegate.swift */; };
-		1CF677FD29BEDDB100B523E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF677FC29BEDDB100B523E0 /* ViewController.swift */; };
+		1CF677FD29BEDDB100B523E0 /* ActivityRecommenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF677FC29BEDDB100B523E0 /* ActivityRecommenderVC.swift */; };
 		1CF6780029BEDDB100B523E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF677FE29BEDDB100B523E0 /* Main.storyboard */; };
 		1CF6780329BEDDB100B523E0 /* REMSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6780129BEDDB100B523E0 /* REMSpace.xcdatamodeld */; };
 		1CF6780529BEDDB200B523E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF6780429BEDDB200B523E0 /* Assets.xcassets */; };
@@ -17,10 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C7E235429C297F800D8820D /* ActivityRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommender.swift; sourceTree = "<group>"; };
+		1C7E235829C29AB200D8820D /* Activity+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity+Ext.swift"; sourceTree = "<group>"; };
 		1CF677F529BEDDB100B523E0 /* REMSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REMSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF677F829BEDDB100B523E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CF677FA29BEDDB100B523E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1CF677FC29BEDDB100B523E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1CF677FC29BEDDB100B523E0 /* ActivityRecommenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommenderVC.swift; sourceTree = "<group>"; };
 		1CF677FF29BEDDB100B523E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CF6780229BEDDB100B523E0 /* REMSpace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = REMSpace.xcdatamodel; sourceTree = "<group>"; };
 		1CF6780429BEDDB200B523E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +43,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C7E235129C2969300D8820D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CF6780129BEDDB100B523E0 /* REMSpace.xcdatamodeld */,
+				1C7E235429C297F800D8820D /* ActivityRecommender.swift */,
+				1C7E235829C29AB200D8820D /* Activity+Ext.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1C7E235229C296A000D8820D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1C7E235329C296A500D8820D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CF677FC29BEDDB100B523E0 /* ActivityRecommenderVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		1CF677EC29BEDDB100B523E0 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +87,15 @@
 		1CF677F729BEDDB100B523E0 /* REMSpace */ = {
 			isa = PBXGroup;
 			children = (
+				1C7E235329C296A500D8820D /* Controller */,
+				1C7E235229C296A000D8820D /* View */,
+				1C7E235129C2969300D8820D /* Model */,
 				1CF677F829BEDDB100B523E0 /* AppDelegate.swift */,
 				1CF677FA29BEDDB100B523E0 /* SceneDelegate.swift */,
-				1CF677FC29BEDDB100B523E0 /* ViewController.swift */,
 				1CF677FE29BEDDB100B523E0 /* Main.storyboard */,
 				1CF6780429BEDDB200B523E0 /* Assets.xcassets */,
 				1CF6780629BEDDB200B523E0 /* LaunchScreen.storyboard */,
 				1CF6780929BEDDB200B523E0 /* Info.plist */,
-				1CF6780129BEDDB100B523E0 /* REMSpace.xcdatamodeld */,
 			);
 			path = REMSpace;
 			sourceTree = "<group>";
@@ -141,8 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF677FD29BEDDB100B523E0 /* ViewController.swift in Sources */,
+				1C7E235929C29AB200D8820D /* Activity+Ext.swift in Sources */,
+				1CF677FD29BEDDB100B523E0 /* ActivityRecommenderVC.swift in Sources */,
 				1CF6780329BEDDB100B523E0 /* REMSpace.xcdatamodeld in Sources */,
+				1C7E235529C297F800D8820D /* ActivityRecommender.swift in Sources */,
 				1CF677F929BEDDB100B523E0 /* AppDelegate.swift in Sources */,
 				1CF677FB29BEDDB100B523E0 /* SceneDelegate.swift in Sources */,
 			);
