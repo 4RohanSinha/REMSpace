@@ -190,7 +190,7 @@
                                         <rect key="frame" x="0.0" y="95" width="393" height="654"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="125" id="Kas-7Y-MfY">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityRecommendationCell" rowHeight="125" id="Kas-7Y-MfY" customClass="ActivityRecommendationCell" customModule="REMSpace" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="393" height="125"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kas-7Y-MfY" id="8Gn-px-z08">
@@ -255,6 +255,11 @@
                                                         <constraint firstAttribute="bottom" secondItem="jAG-16-Soe" secondAttribute="bottom" constant="10" id="udH-Qm-kPK"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="activityDescr" destination="A6K-VK-tn4" id="zaz-uG-Acj"/>
+                                                    <outlet property="activityIsDoneSwitch" destination="DU6-ik-G3c" id="sEG-rz-peR"/>
+                                                    <outlet property="activityName" destination="hLe-xo-Iaf" id="lQm-mr-mWR"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -284,10 +289,10 @@
             </objects>
             <point key="canvasLocation" x="385.49618320610688" y="-494.36619718309862"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Root View Controller-->
         <scene sceneID="RUF-vz-gwW">
             <objects>
-                <tabBarController id="8Ar-tm-qIS" sceneMemberID="viewController">
+                <tabBarController id="8Ar-tm-qIS" customClass="TabBarRootViewController" customModule="REMSpace" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V5T-aM-coL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

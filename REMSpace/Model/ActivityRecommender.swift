@@ -11,6 +11,7 @@ class ActivityRecommender {
     static private var recommendedActivities_: [Activity] = []
     
     static var recommendedActivities: [Activity] {
+        updateRecommendations()
         return recommendedActivities_
     }
     
