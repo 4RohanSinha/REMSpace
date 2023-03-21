@@ -11,23 +11,26 @@ import CoreData
 class ActivityRecommenderVC: CoreDataStackViewController {
     
     @IBOutlet weak var activitiesTableView: UITableView!
-    var latestRecommendations: [Activity] = ActivityRecommender.recommendedActivities
     var fetchedResultsController: NSFetchedResultsController<Activity>?
     
     func configureFetchedResultsController() {
         guard let dataController = dataController else { return }
+
         let fetchRequest = Activity.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
+        //let todayPredicate = NSPredicate(format: "date == %@", Date() as CVarArg)
+        
+        
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController?.delegate = self
+        
         
         do {
             try fetchedResultsController?.performFetch()
         } catch {
             print("Error fetching activities")
         }
-
     }
     
     override func viewDidLoad() {
@@ -55,6 +58,12 @@ extension ActivityRecommenderVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let objCount = fetchedResultsController?.sections?[section].numberOfObjects
+        
+        if (objCount == 0) {
+            ActivityRecommender.updateRecommendations()
+        }
+        
         return fetchedResultsController?.sections?[section].numberOfObjects ?? 0
     }
     
