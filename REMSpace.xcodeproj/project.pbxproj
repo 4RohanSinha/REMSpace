@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1C0CDD29DA108D0038B51F /* OuraAccountManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C0CDC29DA108D0038B51F /* OuraAccountManagerVC.swift */; };
 		1C7E235529C297F800D8820D /* ActivityRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E235429C297F800D8820D /* ActivityRecommender.swift */; };
 		1C7E235929C29AB200D8820D /* Activity+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E235829C29AB200D8820D /* Activity+Ext.swift */; };
 		1CF53AB729C6989100E12489 /* ActivityRecommendationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF53AB629C6989100E12489 /* ActivityRecommendationCell.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C1C0CDC29DA108D0038B51F /* OuraAccountManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraAccountManagerVC.swift; sourceTree = "<group>"; };
 		1C7E235429C297F800D8820D /* ActivityRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommender.swift; sourceTree = "<group>"; };
 		1C7E235829C29AB200D8820D /* Activity+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity+Ext.swift"; sourceTree = "<group>"; };
 		1CF53AB629C6989100E12489 /* ActivityRecommendationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommendationCell.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				1CF677FC29BEDDB100B523E0 /* ActivityRecommenderVC.swift */,
 				1CF53ABA29C6A29700E12489 /* CoreDataStackViewController.swift */,
 				1CF53ABC29C6A31800E12489 /* TabBarRootViewController.swift */,
+				1C1C0CDC29DA108D0038B51F /* OuraAccountManagerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				1CF677F929BEDDB100B523E0 /* AppDelegate.swift in Sources */,
 				1CF53AB929C6A26600E12489 /* DataController.swift in Sources */,
 				1CF53ABB29C6A29700E12489 /* CoreDataStackViewController.swift in Sources */,
+				1C1C0CDD29DA108D0038B51F /* OuraAccountManagerVC.swift in Sources */,
 				1CF677FB29BEDDB100B523E0 /* SceneDelegate.swift in Sources */,
 				1CF53AB729C6989100E12489 /* ActivityRecommendationCell.swift in Sources */,
 			);

@@ -15,6 +15,8 @@ class ActivityRecommendationCell: UITableViewCell {
     
     func configure(withActivity activity: Activity) {
         activityName.text = activity.name
+        activityIsDoneSwitch.backgroundColor = .systemGray6
+        activityIsDoneSwitch.layer.cornerRadius = 16
         activityIsDoneSwitch.isOn = activity.isComplete
     }
 }
