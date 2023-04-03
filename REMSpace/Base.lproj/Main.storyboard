@@ -158,76 +158,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aBJ-EO-zVu">
-                                <rect key="frame" x="0.0" y="103.00000000000001" width="393" height="60.666666666666671"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="aBJ-EO-zVu">
+                                <rect key="frame" x="0.0" y="103" width="393" height="90.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Recommended Activities" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b84-Uv-cqB">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="30.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="45"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ggz-TL-0ed"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnD-OB-ZXP">
-                                        <rect key="frame" x="0.0" y="30.333333333333343" width="393" height="30.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="45" width="393" height="45.666666666666657"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Sign in with Oura to get personalized recommendations!">
-                                                    <attributes>
-                                                        <font key="NSFont" size="14" name="Helvetica-Light"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign in with Oura to get personalized recommendations!">
+                                            <fontDescription key="titleFontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1qZ-Tu-AGy">
-                                <rect key="frame" x="0.0" y="163.66666666666669" width="393" height="605.33333333333326"/>
+                                <rect key="frame" x="0.0" y="193.66666666666669" width="393" height="575.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityRecommendationCell" rowHeight="142" id="XFN-m9-lfv" customClass="ActivityRecommendationCell" customModule="REMSpace" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="142"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityRecommendationCell" rowHeight="105" id="XFN-m9-lfv" customClass="ActivityRecommendationCell" customModule="REMSpace" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XFN-m9-lfv" id="L93-Vt-pco">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="142"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrR-z5-f53">
-                                                    <rect key="frame" x="15" y="15" width="363" height="112"/>
+                                                    <rect key="frame" x="15" y="15" width="363" height="75"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Activity name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nze-NN-EcJ">
-                                                            <rect key="frame" x="15" y="15" width="142" height="30"/>
+                                                            <rect key="frame" x="15" y="37.666666666666664" width="170" height="0.0"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a5f-Wt-PoP">
-                                                            <rect key="frame" x="10" y="60.666666666666671" width="343" height="41.333333333333329"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                        </textView>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SOg-Km-FfJ">
-                                                            <rect key="frame" x="299" y="14.666666666666668" width="51" height="31.000000000000004"/>
+                                                            <rect key="frame" x="299" y="22" width="51" height="31"/>
                                                             <color key="onTintColor" systemColor="systemTealColor"/>
                                                         </switch>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="a5f-Wt-PoP" firstAttribute="top" secondItem="SOg-Km-FfJ" secondAttribute="bottom" constant="15" id="9Qc-Ka-g60"/>
-                                                        <constraint firstItem="a5f-Wt-PoP" firstAttribute="leading" secondItem="HrR-z5-f53" secondAttribute="leading" constant="10" id="B2x-Ng-lqD"/>
-                                                        <constraint firstAttribute="bottom" secondItem="a5f-Wt-PoP" secondAttribute="bottom" constant="10" id="DqU-Vy-zQr"/>
-                                                        <constraint firstAttribute="trailing" secondItem="a5f-Wt-PoP" secondAttribute="trailing" constant="10" id="GAR-HB-9Kz"/>
-                                                        <constraint firstAttribute="height" constant="100" id="RsY-O5-H4u"/>
                                                         <constraint firstAttribute="trailing" secondItem="SOg-Km-FfJ" secondAttribute="trailing" constant="15" id="d4f-bC-fSn"/>
+                                                        <constraint firstAttribute="height" constant="75" id="hfn-bT-8MU"/>
                                                         <constraint firstItem="SOg-Km-FfJ" firstAttribute="centerY" secondItem="nze-NN-EcJ" secondAttribute="centerY" id="lA5-MC-UZF"/>
+                                                        <constraint firstAttribute="bottom" secondItem="nze-NN-EcJ" secondAttribute="bottom" constant="37.5" id="lZr-yN-ZVE"/>
                                                         <constraint firstItem="nze-NN-EcJ" firstAttribute="leading" secondItem="HrR-z5-f53" secondAttribute="leading" constant="15" id="o4g-nm-Hwy"/>
-                                                        <constraint firstItem="nze-NN-EcJ" firstAttribute="top" secondItem="HrR-z5-f53" secondAttribute="top" constant="15" id="zqy-ga-NGe"/>
+                                                        <constraint firstItem="nze-NN-EcJ" firstAttribute="top" secondItem="HrR-z5-f53" secondAttribute="top" constant="37.5" id="rWI-3U-BZX"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -239,7 +226,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="activityDescr" destination="a5f-Wt-PoP" id="I4A-uu-l0c"/>
                                             <outlet property="activityIsDoneSwitch" destination="SOg-Km-FfJ" id="F7v-Oh-bBf"/>
                                             <outlet property="activityName" destination="nze-NN-EcJ" id="cWT-RL-p1s"/>
                                         </connections>
@@ -348,7 +334,7 @@
         <scene sceneID="oTY-21-fXc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FGX-uz-XeP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house" catalog="system" id="QFC-WA-PdS"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="QFC-WA-PdS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ic2-yk-aCE">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -367,7 +353,7 @@
         <scene sceneID="BIT-C8-VB6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xnj-C7-eCx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sleep Stats" selectedImage="list.bullet" catalog="system" id="AVA-Ia-gPY"/>
+                    <tabBarItem key="tabBarItem" title="Sleep Stats" image="list.bullet" catalog="system" selectedImage="list.bullet" id="AVA-Ia-gPY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fjW-83-DCl">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -386,7 +372,7 @@
         <scene sceneID="PMe-5d-SeS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9MA-mu-FEq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="gear" catalog="system" id="slr-td-cel"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" selectedImage="gear" id="slr-td-cel"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tqa-gr-Nug">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
