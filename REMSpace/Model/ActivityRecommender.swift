@@ -25,7 +25,7 @@ class ActivityRecommender {
         }
         
         if let dataController = dataController, recommendedActivities_.count == 0 {
-            let actOne = Activity(viewContext: dataController.viewContext, name: "Running", description: "", date: Date())
+            let actOne = Activity(viewContext: dataController.viewContext, name: "Running", description: "Go on a 15-minute jog in a nearby park (caregiver + person living with dementia)", date: Date())
             let actTwo = Activity(viewContext: dataController.viewContext, name: "Drawing", description: "", date: Date())
             let actThree = Activity(viewContext: dataController.viewContext, name: "Sleeping", description: "", date: Date())
             try? dataController.viewContext.save()

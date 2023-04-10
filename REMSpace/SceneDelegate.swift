@@ -20,8 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         dataController.load()
         
-        let tabBarController = window?.rootViewController as? TabBarRootViewController
+        let tabBarController = (window?.rootViewController as? UINavigationController)?.topViewController as? LandingPageVC
         tabBarController?.dataController = dataController
+        ActivityRecommender.dataController = dataController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -52,7 +53,46 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
 
         // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        //(UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        try? dataController.viewContext.save()
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        let urlContexts = Array(URLContexts)
+        let urls = urlContexts.map { $0.url }
+        for url in urls {
+            var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+            print(url)
+            if components?.scheme! == "remspace" {//} && components?.path == "authenticate" {
+                var path = components?.path
+                
+                components?.path = "/" + (path?.replacingOccurrences(of: "#", with: "?"))!
+                
+                let questionIndex = components?.path.firstIndex(of: "?")!
+                let pathStr = components?.path.substring(to: questionIndex!)
+                let queryStr = components?.path.substring(from: (components?.path.index(after: questionIndex!))!)
+                
+                components?.path = pathStr!
+                components?.query = queryStr!
+
+                
+                if let queryItems = components?.queryItems {
+                    for queryItem in queryItems {
+                        print(queryItem)
+                        if let queryValue = queryItem.value, let landingPageVC = (window?.rootViewController as? UINavigationController)?.topViewController as? LandingPageVC, queryItem.name == "access_token" {
+                            print("hello 1")
+                            UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                            UserDefaults.standard.set(queryValue, forKey: "ouraAccessToken")
+                            OuraClient.fetchPersonalInfo( completion: landingPageVC.onPersonalInfoComplete(response:error:))
+                            
+                            //MARK: only call this method every few times each day + whenever you login or log out + maybe reload button
+                            OuraClient.fetchSleepData(completion: landingPageVC.onSleepDataComplete(response:error:))
+
+                        }
+                    }
+                }
+            }
+        }
     }
 
 

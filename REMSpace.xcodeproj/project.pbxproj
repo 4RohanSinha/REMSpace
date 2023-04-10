@@ -8,8 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		1C1C0CDD29DA108D0038B51F /* OuraAccountManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C0CDC29DA108D0038B51F /* OuraAccountManagerVC.swift */; };
+		1C3AFC6629E08CBA00A93334 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */; };
+		1C63714529DF92D8008EA76F /* VerticalPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714429DF92D8008EA76F /* VerticalPageControl.swift */; };
+		1C63714729DF9F9F008EA76F /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714629DF9F9F008EA76F /* LandingPageVC.swift */; };
+		1C63714929DFA05C008EA76F /* UserAccountControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714829DFA05C008EA76F /* UserAccountControlView.swift */; };
+		1C63714B29DFA797008EA76F /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714A29DFA797008EA76F /* CircularProgressBarView.swift */; };
+		1C63714D29DFAB2C008EA76F /* SleepStatsUserControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714C29DFAB2C008EA76F /* SleepStatsUserControl.swift */; };
+		1C63714F29DFB914008EA76F /* ActivitySummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714E29DFB914008EA76F /* ActivitySummaryCell.swift */; };
+		1C63715129DFB95F008EA76F /* ActivityDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63715029DFB95F008EA76F /* ActivityDescriptionCell.swift */; };
+		1C63715329DFCBFA008EA76F /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63715229DFCBFA008EA76F /* Checkbox.swift */; };
+		1C63715529DFD2CC008EA76F /* MinMaxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63715429DFD2CC008EA76F /* MinMaxTableView.swift */; };
 		1C7E235529C297F800D8820D /* ActivityRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E235429C297F800D8820D /* ActivityRecommender.swift */; };
 		1C7E235929C29AB200D8820D /* Activity+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E235829C29AB200D8820D /* Activity+Ext.swift */; };
+		1CD7ED4F29E116350006F735 /* OuraClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED4E29E116350006F735 /* OuraClient.swift */; };
+		1CD7ED5329E134E30006F735 /* OuraAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED5229E134E30006F735 /* OuraAccessTokenRequest.swift */; };
+		1CD7ED5729E149910006F735 /* OuraPersonalInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED5629E149910006F735 /* OuraPersonalInfoResponse.swift */; };
 		1CF53AB729C6989100E12489 /* ActivityRecommendationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF53AB629C6989100E12489 /* ActivityRecommendationCell.swift */; };
 		1CF53AB929C6A26600E12489 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF53AB829C6A26600E12489 /* DataController.swift */; };
 		1CF53ABB29C6A29700E12489 /* CoreDataStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF53ABA29C6A29700E12489 /* CoreDataStackViewController.swift */; };
@@ -21,12 +34,26 @@
 		1CF6780329BEDDB100B523E0 /* REMSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6780129BEDDB100B523E0 /* REMSpace.xcdatamodeld */; };
 		1CF6780529BEDDB200B523E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF6780429BEDDB200B523E0 /* Assets.xcassets */; };
 		1CF6780829BEDDB200B523E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF6780629BEDDB200B523E0 /* LaunchScreen.storyboard */; };
+		1CF720EC29E354F0001DCD41 /* OuraSleepResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF720EB29E354F0001DCD41 /* OuraSleepResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1C1C0CDC29DA108D0038B51F /* OuraAccountManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraAccountManagerVC.swift; sourceTree = "<group>"; };
+		1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		1C63714429DF92D8008EA76F /* VerticalPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalPageControl.swift; sourceTree = "<group>"; };
+		1C63714629DF9F9F008EA76F /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
+		1C63714829DFA05C008EA76F /* UserAccountControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountControlView.swift; sourceTree = "<group>"; };
+		1C63714A29DFA797008EA76F /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
+		1C63714C29DFAB2C008EA76F /* SleepStatsUserControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStatsUserControl.swift; sourceTree = "<group>"; };
+		1C63714E29DFB914008EA76F /* ActivitySummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySummaryCell.swift; sourceTree = "<group>"; };
+		1C63715029DFB95F008EA76F /* ActivityDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDescriptionCell.swift; sourceTree = "<group>"; };
+		1C63715229DFCBFA008EA76F /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		1C63715429DFD2CC008EA76F /* MinMaxTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxTableView.swift; sourceTree = "<group>"; };
 		1C7E235429C297F800D8820D /* ActivityRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommender.swift; sourceTree = "<group>"; };
 		1C7E235829C29AB200D8820D /* Activity+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity+Ext.swift"; sourceTree = "<group>"; };
+		1CD7ED4E29E116350006F735 /* OuraClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraClient.swift; sourceTree = "<group>"; };
+		1CD7ED5229E134E30006F735 /* OuraAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraAccessTokenRequest.swift; sourceTree = "<group>"; };
+		1CD7ED5629E149910006F735 /* OuraPersonalInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraPersonalInfoResponse.swift; sourceTree = "<group>"; };
 		1CF53AB629C6989100E12489 /* ActivityRecommendationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommendationCell.swift; sourceTree = "<group>"; };
 		1CF53AB829C6A26600E12489 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		1CF53ABA29C6A29700E12489 /* CoreDataStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +67,7 @@
 		1CF6780429BEDDB200B523E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CF6780729BEDDB200B523E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CF6780929BEDDB200B523E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CF720EB29E354F0001DCD41 /* OuraSleepResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraSleepResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +88,7 @@
 				1C7E235429C297F800D8820D /* ActivityRecommender.swift */,
 				1C7E235829C29AB200D8820D /* Activity+Ext.swift */,
 				1CF53AB829C6A26600E12489 /* DataController.swift */,
+				1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -68,6 +97,14 @@
 			isa = PBXGroup;
 			children = (
 				1CF53AB629C6989100E12489 /* ActivityRecommendationCell.swift */,
+				1C63714429DF92D8008EA76F /* VerticalPageControl.swift */,
+				1C63714829DFA05C008EA76F /* UserAccountControlView.swift */,
+				1C63714A29DFA797008EA76F /* CircularProgressBarView.swift */,
+				1C63714C29DFAB2C008EA76F /* SleepStatsUserControl.swift */,
+				1C63714E29DFB914008EA76F /* ActivitySummaryCell.swift */,
+				1C63715029DFB95F008EA76F /* ActivityDescriptionCell.swift */,
+				1C63715229DFCBFA008EA76F /* Checkbox.swift */,
+				1C63715429DFD2CC008EA76F /* MinMaxTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -79,8 +116,36 @@
 				1CF53ABA29C6A29700E12489 /* CoreDataStackViewController.swift */,
 				1CF53ABC29C6A31800E12489 /* TabBarRootViewController.swift */,
 				1C1C0CDC29DA108D0038B51F /* OuraAccountManagerVC.swift */,
+				1C63714629DF9F9F008EA76F /* LandingPageVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		1CD7ED4D29E1156B0006F735 /* Oura Client */ = {
+			isa = PBXGroup;
+			children = (
+				1CD7ED5029E134B20006F735 /* Requests */,
+				1CD7ED5129E134C10006F735 /* Responses */,
+				1CD7ED4E29E116350006F735 /* OuraClient.swift */,
+			);
+			path = "Oura Client";
+			sourceTree = "<group>";
+		};
+		1CD7ED5029E134B20006F735 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				1CD7ED5229E134E30006F735 /* OuraAccessTokenRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		1CD7ED5129E134C10006F735 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				1CD7ED5629E149910006F735 /* OuraPersonalInfoResponse.swift */,
+				1CF720EB29E354F0001DCD41 /* OuraSleepResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		1CF677EC29BEDDB100B523E0 = {
@@ -102,6 +167,7 @@
 		1CF677F729BEDDB100B523E0 /* REMSpace */ = {
 			isa = PBXGroup;
 			children = (
+				1CD7ED4D29E1156B0006F735 /* Oura Client */,
 				1C7E235329C296A500D8820D /* Controller */,
 				1C7E235229C296A000D8820D /* View */,
 				1C7E235129C2969300D8820D /* Model */,
@@ -189,14 +255,28 @@
 				1C7E235929C29AB200D8820D /* Activity+Ext.swift in Sources */,
 				1CF677FD29BEDDB100B523E0 /* ActivityRecommenderVC.swift in Sources */,
 				1CF6780329BEDDB100B523E0 /* REMSpace.xcdatamodeld in Sources */,
+				1C63714929DFA05C008EA76F /* UserAccountControlView.swift in Sources */,
+				1C3AFC6629E08CBA00A93334 /* TextToSpeech.swift in Sources */,
+				1C63714B29DFA797008EA76F /* CircularProgressBarView.swift in Sources */,
+				1CF720EC29E354F0001DCD41 /* OuraSleepResponse.swift in Sources */,
 				1C7E235529C297F800D8820D /* ActivityRecommender.swift in Sources */,
 				1CF53ABD29C6A31800E12489 /* TabBarRootViewController.swift in Sources */,
+				1C63715129DFB95F008EA76F /* ActivityDescriptionCell.swift in Sources */,
+				1C63715329DFCBFA008EA76F /* Checkbox.swift in Sources */,
 				1CF677F929BEDDB100B523E0 /* AppDelegate.swift in Sources */,
 				1CF53AB929C6A26600E12489 /* DataController.swift in Sources */,
 				1CF53ABB29C6A29700E12489 /* CoreDataStackViewController.swift in Sources */,
+				1CD7ED4F29E116350006F735 /* OuraClient.swift in Sources */,
+				1C63714529DF92D8008EA76F /* VerticalPageControl.swift in Sources */,
 				1C1C0CDD29DA108D0038B51F /* OuraAccountManagerVC.swift in Sources */,
 				1CF677FB29BEDDB100B523E0 /* SceneDelegate.swift in Sources */,
 				1CF53AB729C6989100E12489 /* ActivityRecommendationCell.swift in Sources */,
+				1CD7ED5329E134E30006F735 /* OuraAccessTokenRequest.swift in Sources */,
+				1C63714D29DFAB2C008EA76F /* SleepStatsUserControl.swift in Sources */,
+				1CD7ED5729E149910006F735 /* OuraPersonalInfoResponse.swift in Sources */,
+				1C63715529DFD2CC008EA76F /* MinMaxTableView.swift in Sources */,
+				1C63714729DF9F9F008EA76F /* LandingPageVC.swift in Sources */,
+				1C63714F29DFB914008EA76F /* ActivitySummaryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,12 +431,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.REMSpace;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tau.REMSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -379,12 +460,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.REMSpace;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tau.REMSpace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
