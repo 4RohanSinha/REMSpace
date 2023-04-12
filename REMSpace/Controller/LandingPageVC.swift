@@ -18,12 +18,30 @@ class LandingPageVC: CoreDataStackViewController {
     @IBOutlet weak var activitiesTableView: MinMaxTableView!
     var activitiesFetchedResultsController: NSFetchedResultsController<Activity>?
     
+    func getStartAndEndDates(date: Date) -> (Date, Date) {
+        var startComponents = Calendar.current.dateComponents(Set([.year, .month, .day]), from: date)
+        var endComponents = Calendar.current.dateComponents(Set([.year, .month, .day]), from: date)
+        
+        startComponents.hour = 0
+        startComponents.minute = 0
+        startComponents.second = 0
+        
+        endComponents.hour = 23
+        endComponents.minute = 59
+        endComponents.second = 59
+        
+        return (Calendar.current.date(from: startComponents)!, Calendar.current.date(from: endComponents)!)
+    }
+    
     func configureFetchedResultsController() {
         guard let dataController = dataController else { return }
 
         let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
+        let dateRange = getStartAndEndDates(date: Date())
+        
+        fetchRequest.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", dateRange.0 as CVarArg, dateRange.1 as CVarArg)
         
         activitiesFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         activitiesFetchedResultsController?.delegate = self
@@ -38,7 +56,7 @@ class LandingPageVC: CoreDataStackViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ActivityRecommenderInterface.load()
         AVSpeechSynthesisVoice.speechVoices()
         
         let usrAcctCtrlTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(logInScreen))
@@ -136,9 +154,18 @@ extension LandingPageVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let tableView = tableView as? MinMaxTableView else { return UITableViewCell() }
+        
+        let checkboxTapClosure: ((Activity, ActivitySummaryCell) -> ()) = { activity, cell in
+            activity.isComplete = cell.activityComplete.isOn
+            try? self.dataController?.viewContext.save()
+        }
+        
         if indexPath == tableView.maximizedRow {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "activityDetailCell") as? ActivityDescriptionCell, let curActivity = activitiesFetchedResultsController?.object(at: indexPath) else { return UITableViewCell() }
             cell.configureWithActivity(activity: curActivity)
+            cell.activityComplete.onTap = {
+                checkboxTapClosure(curActivity, cell)
+            }
             cell.selectionStyle = .none
             return cell
         }
@@ -146,6 +173,9 @@ extension LandingPageVC: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "activitySummaryCell") as? ActivitySummaryCell, let curActivity = activitiesFetchedResultsController?.object(at: indexPath) else { return UITableViewCell() }
         
         cell.configureWithActivity(activity: curActivity)
+        cell.activityComplete.onTap = {
+            checkboxTapClosure(curActivity, cell)
+        }
         cell.selectionStyle = .none
         return cell
     }

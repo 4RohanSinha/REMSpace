@@ -9,6 +9,7 @@ import UIKit
 
 class Checkbox: UIButton {
     var isOn_: Bool = false
+    var onTap: (() -> ())?
     
     var isOn: Bool {
         get {
@@ -19,7 +20,6 @@ class Checkbox: UIButton {
                 setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
             } else {
                 setImage(UIImage(systemName: "square"), for: .normal)
-
             }
         }
     }
@@ -34,6 +34,7 @@ class Checkbox: UIButton {
     
     @objc func switchState() {
         isOn = !isOn
+        onTap?()
     }
 
 }

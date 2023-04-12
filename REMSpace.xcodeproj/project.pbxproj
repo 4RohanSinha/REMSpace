@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C1C0CDD29DA108D0038B51F /* OuraAccountManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1C0CDC29DA108D0038B51F /* OuraAccountManagerVC.swift */; };
 		1C3AFC6629E08CBA00A93334 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */; };
-		1C63714529DF92D8008EA76F /* VerticalPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714429DF92D8008EA76F /* VerticalPageControl.swift */; };
 		1C63714729DF9F9F008EA76F /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714629DF9F9F008EA76F /* LandingPageVC.swift */; };
 		1C63714929DFA05C008EA76F /* UserAccountControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714829DFA05C008EA76F /* UserAccountControlView.swift */; };
 		1C63714B29DFA797008EA76F /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714A29DFA797008EA76F /* CircularProgressBarView.swift */; };
@@ -20,16 +18,19 @@
 		1C63715529DFD2CC008EA76F /* MinMaxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63715429DFD2CC008EA76F /* MinMaxTableView.swift */; };
 		1C7E235529C297F800D8820D /* ActivityRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E235429C297F800D8820D /* ActivityRecommender.swift */; };
 		1C7E235929C29AB200D8820D /* Activity+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E235829C29AB200D8820D /* Activity+Ext.swift */; };
+		1C8E91A729E6438800A695B6 /* SleepStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E91A629E6438800A695B6 /* SleepStatsViewController.swift */; };
+		1C8E91A929E643DE00A695B6 /* DailySleepDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E91A829E643DE00A695B6 /* DailySleepDataView.swift */; };
+		1C9C0C0829E3E1D30086E72B /* AirTableActivityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C0C0729E3E1D30086E72B /* AirTableActivityResponse.swift */; };
+		1C9C0C0A29E3E38B0086E72B /* AirTableClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C0C0929E3E38B0086E72B /* AirTableClient.swift */; };
+		1C9C0C0C29E3F45B0086E72B /* ActivityRecommenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C0C0B29E3F45B0086E72B /* ActivityRecommenderModel.swift */; };
+		1C9C0C1029E497AB0086E72B /* ActivityRecommenderV1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C0C0F29E497AB0086E72B /* ActivityRecommenderV1.mlmodel */; };
 		1CD7ED4F29E116350006F735 /* OuraClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED4E29E116350006F735 /* OuraClient.swift */; };
 		1CD7ED5329E134E30006F735 /* OuraAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED5229E134E30006F735 /* OuraAccessTokenRequest.swift */; };
 		1CD7ED5729E149910006F735 /* OuraPersonalInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED5629E149910006F735 /* OuraPersonalInfoResponse.swift */; };
-		1CF53AB729C6989100E12489 /* ActivityRecommendationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF53AB629C6989100E12489 /* ActivityRecommendationCell.swift */; };
 		1CF53AB929C6A26600E12489 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF53AB829C6A26600E12489 /* DataController.swift */; };
 		1CF53ABB29C6A29700E12489 /* CoreDataStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF53ABA29C6A29700E12489 /* CoreDataStackViewController.swift */; };
-		1CF53ABD29C6A31800E12489 /* TabBarRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF53ABC29C6A31800E12489 /* TabBarRootViewController.swift */; };
 		1CF677F929BEDDB100B523E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF677F829BEDDB100B523E0 /* AppDelegate.swift */; };
 		1CF677FB29BEDDB100B523E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF677FA29BEDDB100B523E0 /* SceneDelegate.swift */; };
-		1CF677FD29BEDDB100B523E0 /* ActivityRecommenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF677FC29BEDDB100B523E0 /* ActivityRecommenderVC.swift */; };
 		1CF6780029BEDDB100B523E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF677FE29BEDDB100B523E0 /* Main.storyboard */; };
 		1CF6780329BEDDB100B523E0 /* REMSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CF6780129BEDDB100B523E0 /* REMSpace.xcdatamodeld */; };
 		1CF6780529BEDDB200B523E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF6780429BEDDB200B523E0 /* Assets.xcassets */; };
@@ -38,9 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C1C0CDC29DA108D0038B51F /* OuraAccountManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraAccountManagerVC.swift; sourceTree = "<group>"; };
 		1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
-		1C63714429DF92D8008EA76F /* VerticalPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalPageControl.swift; sourceTree = "<group>"; };
 		1C63714629DF9F9F008EA76F /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
 		1C63714829DFA05C008EA76F /* UserAccountControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountControlView.swift; sourceTree = "<group>"; };
 		1C63714A29DFA797008EA76F /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
@@ -51,17 +50,20 @@
 		1C63715429DFD2CC008EA76F /* MinMaxTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxTableView.swift; sourceTree = "<group>"; };
 		1C7E235429C297F800D8820D /* ActivityRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommender.swift; sourceTree = "<group>"; };
 		1C7E235829C29AB200D8820D /* Activity+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity+Ext.swift"; sourceTree = "<group>"; };
+		1C8E91A629E6438800A695B6 /* SleepStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStatsViewController.swift; sourceTree = "<group>"; };
+		1C8E91A829E643DE00A695B6 /* DailySleepDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySleepDataView.swift; sourceTree = "<group>"; };
+		1C9C0C0729E3E1D30086E72B /* AirTableActivityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirTableActivityResponse.swift; sourceTree = "<group>"; };
+		1C9C0C0929E3E38B0086E72B /* AirTableClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirTableClient.swift; sourceTree = "<group>"; };
+		1C9C0C0B29E3F45B0086E72B /* ActivityRecommenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommenderModel.swift; sourceTree = "<group>"; };
+		1C9C0C0F29E497AB0086E72B /* ActivityRecommenderV1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ActivityRecommenderV1.mlmodel; sourceTree = "<group>"; };
 		1CD7ED4E29E116350006F735 /* OuraClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraClient.swift; sourceTree = "<group>"; };
 		1CD7ED5229E134E30006F735 /* OuraAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraAccessTokenRequest.swift; sourceTree = "<group>"; };
 		1CD7ED5629E149910006F735 /* OuraPersonalInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraPersonalInfoResponse.swift; sourceTree = "<group>"; };
-		1CF53AB629C6989100E12489 /* ActivityRecommendationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommendationCell.swift; sourceTree = "<group>"; };
 		1CF53AB829C6A26600E12489 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		1CF53ABA29C6A29700E12489 /* CoreDataStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackViewController.swift; sourceTree = "<group>"; };
-		1CF53ABC29C6A31800E12489 /* TabBarRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRootViewController.swift; sourceTree = "<group>"; };
 		1CF677F529BEDDB100B523E0 /* REMSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REMSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF677F829BEDDB100B523E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CF677FA29BEDDB100B523E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1CF677FC29BEDDB100B523E0 /* ActivityRecommenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommenderVC.swift; sourceTree = "<group>"; };
 		1CF677FF29BEDDB100B523E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CF6780229BEDDB100B523E0 /* REMSpace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = REMSpace.xcdatamodel; sourceTree = "<group>"; };
 		1CF6780429BEDDB200B523E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +91,8 @@
 				1C7E235829C29AB200D8820D /* Activity+Ext.swift */,
 				1CF53AB829C6A26600E12489 /* DataController.swift */,
 				1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */,
+				1C9C0C0B29E3F45B0086E72B /* ActivityRecommenderModel.swift */,
+				1C9C0C0F29E497AB0086E72B /* ActivityRecommenderV1.mlmodel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,13 +100,10 @@
 		1C7E235229C296A000D8820D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1CF53AB629C6989100E12489 /* ActivityRecommendationCell.swift */,
-				1C63714429DF92D8008EA76F /* VerticalPageControl.swift */,
-				1C63714829DFA05C008EA76F /* UserAccountControlView.swift */,
+				1C8E91AB29E6442700A695B6 /* Sleep Stats */,
+				1C8E91AA29E643FD00A695B6 /* Landing Page */,
+				1CF677FE29BEDDB100B523E0 /* Main.storyboard */,
 				1C63714A29DFA797008EA76F /* CircularProgressBarView.swift */,
-				1C63714C29DFAB2C008EA76F /* SleepStatsUserControl.swift */,
-				1C63714E29DFB914008EA76F /* ActivitySummaryCell.swift */,
-				1C63715029DFB95F008EA76F /* ActivityDescriptionCell.swift */,
 				1C63715229DFCBFA008EA76F /* Checkbox.swift */,
 				1C63715429DFD2CC008EA76F /* MinMaxTableView.swift */,
 			);
@@ -112,13 +113,39 @@
 		1C7E235329C296A500D8820D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1CF677FC29BEDDB100B523E0 /* ActivityRecommenderVC.swift */,
 				1CF53ABA29C6A29700E12489 /* CoreDataStackViewController.swift */,
-				1CF53ABC29C6A31800E12489 /* TabBarRootViewController.swift */,
-				1C1C0CDC29DA108D0038B51F /* OuraAccountManagerVC.swift */,
 				1C63714629DF9F9F008EA76F /* LandingPageVC.swift */,
+				1C8E91A629E6438800A695B6 /* SleepStatsViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		1C8E91AA29E643FD00A695B6 /* Landing Page */ = {
+			isa = PBXGroup;
+			children = (
+				1C63714829DFA05C008EA76F /* UserAccountControlView.swift */,
+				1C63714C29DFAB2C008EA76F /* SleepStatsUserControl.swift */,
+				1C63714E29DFB914008EA76F /* ActivitySummaryCell.swift */,
+				1C63715029DFB95F008EA76F /* ActivityDescriptionCell.swift */,
+			);
+			path = "Landing Page";
+			sourceTree = "<group>";
+		};
+		1C8E91AB29E6442700A695B6 /* Sleep Stats */ = {
+			isa = PBXGroup;
+			children = (
+				1C8E91A829E643DE00A695B6 /* DailySleepDataView.swift */,
+			);
+			path = "Sleep Stats";
+			sourceTree = "<group>";
+		};
+		1C9C0C0629E3E1B20086E72B /* AirTable Client */ = {
+			isa = PBXGroup;
+			children = (
+				1C9C0C0729E3E1D30086E72B /* AirTableActivityResponse.swift */,
+				1C9C0C0929E3E38B0086E72B /* AirTableClient.swift */,
+			);
+			path = "AirTable Client";
 			sourceTree = "<group>";
 		};
 		1CD7ED4D29E1156B0006F735 /* Oura Client */ = {
@@ -167,13 +194,13 @@
 		1CF677F729BEDDB100B523E0 /* REMSpace */ = {
 			isa = PBXGroup;
 			children = (
+				1C9C0C0629E3E1B20086E72B /* AirTable Client */,
 				1CD7ED4D29E1156B0006F735 /* Oura Client */,
 				1C7E235329C296A500D8820D /* Controller */,
 				1C7E235229C296A000D8820D /* View */,
 				1C7E235129C2969300D8820D /* Model */,
 				1CF677F829BEDDB100B523E0 /* AppDelegate.swift */,
 				1CF677FA29BEDDB100B523E0 /* SceneDelegate.swift */,
-				1CF677FE29BEDDB100B523E0 /* Main.storyboard */,
 				1CF6780429BEDDB200B523E0 /* Assets.xcassets */,
 				1CF6780629BEDDB200B523E0 /* LaunchScreen.storyboard */,
 				1CF6780929BEDDB200B523E0 /* Info.plist */,
@@ -253,24 +280,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C7E235929C29AB200D8820D /* Activity+Ext.swift in Sources */,
-				1CF677FD29BEDDB100B523E0 /* ActivityRecommenderVC.swift in Sources */,
+				1C9C0C0829E3E1D30086E72B /* AirTableActivityResponse.swift in Sources */,
 				1CF6780329BEDDB100B523E0 /* REMSpace.xcdatamodeld in Sources */,
+				1C8E91A929E643DE00A695B6 /* DailySleepDataView.swift in Sources */,
+				1C9C0C0A29E3E38B0086E72B /* AirTableClient.swift in Sources */,
 				1C63714929DFA05C008EA76F /* UserAccountControlView.swift in Sources */,
 				1C3AFC6629E08CBA00A93334 /* TextToSpeech.swift in Sources */,
+				1C8E91A729E6438800A695B6 /* SleepStatsViewController.swift in Sources */,
 				1C63714B29DFA797008EA76F /* CircularProgressBarView.swift in Sources */,
 				1CF720EC29E354F0001DCD41 /* OuraSleepResponse.swift in Sources */,
 				1C7E235529C297F800D8820D /* ActivityRecommender.swift in Sources */,
-				1CF53ABD29C6A31800E12489 /* TabBarRootViewController.swift in Sources */,
 				1C63715129DFB95F008EA76F /* ActivityDescriptionCell.swift in Sources */,
 				1C63715329DFCBFA008EA76F /* Checkbox.swift in Sources */,
 				1CF677F929BEDDB100B523E0 /* AppDelegate.swift in Sources */,
 				1CF53AB929C6A26600E12489 /* DataController.swift in Sources */,
 				1CF53ABB29C6A29700E12489 /* CoreDataStackViewController.swift in Sources */,
+				1C9C0C0C29E3F45B0086E72B /* ActivityRecommenderModel.swift in Sources */,
 				1CD7ED4F29E116350006F735 /* OuraClient.swift in Sources */,
-				1C63714529DF92D8008EA76F /* VerticalPageControl.swift in Sources */,
-				1C1C0CDD29DA108D0038B51F /* OuraAccountManagerVC.swift in Sources */,
+				1C9C0C1029E497AB0086E72B /* ActivityRecommenderV1.mlmodel in Sources */,
 				1CF677FB29BEDDB100B523E0 /* SceneDelegate.swift in Sources */,
-				1CF53AB729C6989100E12489 /* ActivityRecommendationCell.swift in Sources */,
 				1CD7ED5329E134E30006F735 /* OuraAccessTokenRequest.swift in Sources */,
 				1C63714D29DFAB2C008EA76F /* SleepStatsUserControl.swift in Sources */,
 				1CD7ED5729E149910006F735 /* OuraPersonalInfoResponse.swift in Sources */,

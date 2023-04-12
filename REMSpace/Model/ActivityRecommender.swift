@@ -9,29 +9,42 @@ import Foundation
 import CoreData
 
 class ActivityRecommender {
-    static private var recommendedActivities_: [Activity] = []
     static var dataController: DataController?
     
-    static var recommendedActivities: [Activity] {
-        //updateRecommendations()
-        return recommendedActivities_
+    class func initialize(dataController: DataController) {
+        self.dataController = dataController
+    }
+    
+    class func getStartAndEndDates(date: Date) -> (Date, Date) {
+        var startComponents = Calendar.current.dateComponents(Set([.year, .month, .day]), from: date)
+        var endComponents = Calendar.current.dateComponents(Set([.year, .month, .day]), from: date)
+        
+        startComponents.hour = 0
+        startComponents.minute = 0
+        startComponents.second = 0
+        
+        endComponents.hour = 23
+        endComponents.minute = 59
+        endComponents.second = 59
+        
+        return (Calendar.current.date(from: startComponents)!, Calendar.current.date(from: endComponents)!)
     }
     
     class func updateRecommendations() {
-        let actFetchRequest = Activity.fetchRequest()
-
-        if let savedRecommendations = try? dataController?.viewContext.fetch(actFetchRequest) {
-            recommendedActivities_ = savedRecommendations
-        }
+        let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
-        if let dataController = dataController, recommendedActivities_.count == 0 {
+        let dateRange = getStartAndEndDates(date: Date())
+        
+        fetchRequest.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", dateRange.0 as CVarArg, dateRange.1 as CVarArg)
+        
+        guard let activities = try? dataController?.viewContext.fetch(fetchRequest) as? [Activity], activities.count == 0 else { return }
+        
+        if let dataController = dataController {
             let actOne = Activity(viewContext: dataController.viewContext, name: "Running", description: "Go on a 15-minute jog in a nearby park (caregiver + person living with dementia)", date: Date())
             let actTwo = Activity(viewContext: dataController.viewContext, name: "Drawing", description: "", date: Date())
             let actThree = Activity(viewContext: dataController.viewContext, name: "Sleeping", description: "", date: Date())
             try? dataController.viewContext.save()
-
-            recommendedActivities_.append(contentsOf: [actOne, actTwo, actThree])
-            
 
         }
     }

@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabBarController = (window?.rootViewController as? UINavigationController)?.topViewController as? LandingPageVC
         tabBarController?.dataController = dataController
-        ActivityRecommender.dataController = dataController
+        ActivityRecommender.initialize(dataController: dataController)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
