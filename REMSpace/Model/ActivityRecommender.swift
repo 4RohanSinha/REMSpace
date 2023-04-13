@@ -41,9 +41,9 @@ class ActivityRecommender {
         guard let activities = try? dataController?.viewContext.fetch(fetchRequest) as? [Activity], activities.count == 0 else { return }
         
         if let dataController = dataController {
-            let actOne = Activity(viewContext: dataController.viewContext, name: "Running", description: "Go on a 15-minute jog in a nearby park (caregiver + person living with dementia)", date: Date())
-            let actTwo = Activity(viewContext: dataController.viewContext, name: "Drawing", description: "", date: Date())
-            let actThree = Activity(viewContext: dataController.viewContext, name: "Sleeping", description: "", date: Date())
+            let actOne = Activity(viewContext: dataController.viewContext, name: "Running", description: "<Example description for running goes here>", date: Date())
+            let actTwo = Activity(viewContext: dataController.viewContext, name: "Drawing", description: "<Example description for drawing goes here>", date: Date())
+            let actThree = Activity(viewContext: dataController.viewContext, name: "Sleeping", description: "<Example description for sleeping goes here>", date: Date())
             try? dataController.viewContext.save()
 
         }

@@ -81,6 +81,10 @@ class SleepStatsUserControl: UIView {
             sleepStatsTitleLbl.text = "Sleep Stats"
             sleepDatePicker.isHidden = false
             
+            if (sleepDatePicker.date >= getStartAndEndDates(date: Date()).0 && sleepDatePicker.date <= getStartAndEndDates(date: Date()).1) {
+                sleepDatePicker.date = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+            }
+            
             let dateRange = getStartAndEndDates(date: sleepDatePicker.date)
 
 

@@ -15,6 +15,7 @@ class UserAccountControlView: UIView {
     @IBOutlet weak var explainLbl: UILabel!
     
     var reloadViews: (() -> ())?
+    
     func configure() {
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
 

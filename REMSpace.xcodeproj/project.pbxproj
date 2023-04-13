@@ -16,14 +16,13 @@
 		1C63715129DFB95F008EA76F /* ActivityDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63715029DFB95F008EA76F /* ActivityDescriptionCell.swift */; };
 		1C63715329DFCBFA008EA76F /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63715229DFCBFA008EA76F /* Checkbox.swift */; };
 		1C63715529DFD2CC008EA76F /* MinMaxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63715429DFD2CC008EA76F /* MinMaxTableView.swift */; };
+		1C78166329E7878C002565D7 /* SleepLogGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C78166229E7878C002565D7 /* SleepLogGraph.swift */; };
 		1C7E235529C297F800D8820D /* ActivityRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E235429C297F800D8820D /* ActivityRecommender.swift */; };
 		1C7E235929C29AB200D8820D /* Activity+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7E235829C29AB200D8820D /* Activity+Ext.swift */; };
 		1C8E91A729E6438800A695B6 /* SleepStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E91A629E6438800A695B6 /* SleepStatsViewController.swift */; };
 		1C8E91A929E643DE00A695B6 /* DailySleepDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E91A829E643DE00A695B6 /* DailySleepDataView.swift */; };
 		1C9C0C0829E3E1D30086E72B /* AirTableActivityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C0C0729E3E1D30086E72B /* AirTableActivityResponse.swift */; };
 		1C9C0C0A29E3E38B0086E72B /* AirTableClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C0C0929E3E38B0086E72B /* AirTableClient.swift */; };
-		1C9C0C0C29E3F45B0086E72B /* ActivityRecommenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C0C0B29E3F45B0086E72B /* ActivityRecommenderModel.swift */; };
-		1C9C0C1029E497AB0086E72B /* ActivityRecommenderV1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C0C0F29E497AB0086E72B /* ActivityRecommenderV1.mlmodel */; };
 		1CD7ED4F29E116350006F735 /* OuraClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED4E29E116350006F735 /* OuraClient.swift */; };
 		1CD7ED5329E134E30006F735 /* OuraAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED5229E134E30006F735 /* OuraAccessTokenRequest.swift */; };
 		1CD7ED5729E149910006F735 /* OuraPersonalInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED5629E149910006F735 /* OuraPersonalInfoResponse.swift */; };
@@ -48,14 +47,13 @@
 		1C63715029DFB95F008EA76F /* ActivityDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDescriptionCell.swift; sourceTree = "<group>"; };
 		1C63715229DFCBFA008EA76F /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		1C63715429DFD2CC008EA76F /* MinMaxTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinMaxTableView.swift; sourceTree = "<group>"; };
+		1C78166229E7878C002565D7 /* SleepLogGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepLogGraph.swift; sourceTree = "<group>"; };
 		1C7E235429C297F800D8820D /* ActivityRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommender.swift; sourceTree = "<group>"; };
 		1C7E235829C29AB200D8820D /* Activity+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity+Ext.swift"; sourceTree = "<group>"; };
 		1C8E91A629E6438800A695B6 /* SleepStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStatsViewController.swift; sourceTree = "<group>"; };
 		1C8E91A829E643DE00A695B6 /* DailySleepDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySleepDataView.swift; sourceTree = "<group>"; };
 		1C9C0C0729E3E1D30086E72B /* AirTableActivityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirTableActivityResponse.swift; sourceTree = "<group>"; };
 		1C9C0C0929E3E38B0086E72B /* AirTableClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirTableClient.swift; sourceTree = "<group>"; };
-		1C9C0C0B29E3F45B0086E72B /* ActivityRecommenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommenderModel.swift; sourceTree = "<group>"; };
-		1C9C0C0F29E497AB0086E72B /* ActivityRecommenderV1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ActivityRecommenderV1.mlmodel; sourceTree = "<group>"; };
 		1CD7ED4E29E116350006F735 /* OuraClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraClient.swift; sourceTree = "<group>"; };
 		1CD7ED5229E134E30006F735 /* OuraAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraAccessTokenRequest.swift; sourceTree = "<group>"; };
 		1CD7ED5629E149910006F735 /* OuraPersonalInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraPersonalInfoResponse.swift; sourceTree = "<group>"; };
@@ -91,8 +89,6 @@
 				1C7E235829C29AB200D8820D /* Activity+Ext.swift */,
 				1CF53AB829C6A26600E12489 /* DataController.swift */,
 				1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */,
-				1C9C0C0B29E3F45B0086E72B /* ActivityRecommenderModel.swift */,
-				1C9C0C0F29E497AB0086E72B /* ActivityRecommenderV1.mlmodel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				1C8E91A829E643DE00A695B6 /* DailySleepDataView.swift */,
+				1C78166229E7878C002565D7 /* SleepLogGraph.swift */,
 			);
 			path = "Sleep Stats";
 			sourceTree = "<group>";
@@ -295,14 +292,13 @@
 				1CF677F929BEDDB100B523E0 /* AppDelegate.swift in Sources */,
 				1CF53AB929C6A26600E12489 /* DataController.swift in Sources */,
 				1CF53ABB29C6A29700E12489 /* CoreDataStackViewController.swift in Sources */,
-				1C9C0C0C29E3F45B0086E72B /* ActivityRecommenderModel.swift in Sources */,
 				1CD7ED4F29E116350006F735 /* OuraClient.swift in Sources */,
-				1C9C0C1029E497AB0086E72B /* ActivityRecommenderV1.mlmodel in Sources */,
 				1CF677FB29BEDDB100B523E0 /* SceneDelegate.swift in Sources */,
 				1CD7ED5329E134E30006F735 /* OuraAccessTokenRequest.swift in Sources */,
 				1C63714D29DFAB2C008EA76F /* SleepStatsUserControl.swift in Sources */,
 				1CD7ED5729E149910006F735 /* OuraPersonalInfoResponse.swift in Sources */,
 				1C63715529DFD2CC008EA76F /* MinMaxTableView.swift in Sources */,
+				1C78166329E7878C002565D7 /* SleepLogGraph.swift in Sources */,
 				1C63714729DF9F9F008EA76F /* LandingPageVC.swift in Sources */,
 				1C63714F29DFB914008EA76F /* ActivitySummaryCell.swift in Sources */,
 			);

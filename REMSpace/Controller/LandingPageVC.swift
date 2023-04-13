@@ -56,13 +56,15 @@ class LandingPageVC: CoreDataStackViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ActivityRecommenderInterface.load()
         AVSpeechSynthesisVoice.speechVoices()
         
         let usrAcctCtrlTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(logInScreen))
         userAcctCtrlView.addGestureRecognizer(usrAcctCtrlTapRecognizer)
         userAcctCtrlView.reloadViews = updateViews
-       
+        
+        let sleepStatsCtrlTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(sleepStatsScreen))
+        sleepStatsCtrlView.addGestureRecognizer(sleepStatsCtrlTapRecognizer)
+        
         sleepStatsCtrlView.dataController = dataController
         sleepStatsCtrlView.vc = self
         sleepStatsCtrlView.initializeFRC()
@@ -87,6 +89,13 @@ class LandingPageVC: CoreDataStackViewController {
     @objc func logInScreen() {
         if (!UserDefaults.standard.bool(forKey: "isLoggedIn")) {
             UIApplication.shared.open(OuraClient.Endpoints.loginOauth.url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @objc func sleepStatsScreen() {
+        let sleepLogFetchRequest = SleepLogEntry.fetchRequest()
+        if let sleepLogs = try? dataController?.viewContext.fetch(sleepLogFetchRequest) {
+            performSegue(withIdentifier: "viewSleepStats", sender: sleepLogs)
         }
     }
     
@@ -132,6 +141,24 @@ class LandingPageVC: CoreDataStackViewController {
     func updateViews() {
         userAcctCtrlView.configure()
         sleepStatsCtrlView.updateView()
+        
+        if (!UserDefaults.standard.bool(forKey: "isLoggedIn")) {
+            let sleepLogFetchRequest = SleepLogEntry.fetchRequest()
+            if let sleepLogs = try? dataController?.viewContext.fetch(sleepLogFetchRequest) {
+                
+                for sleepLog in sleepLogs {
+                    dataController?.viewContext.delete(sleepLog)
+                }
+                
+                try? dataController?.viewContext.save()
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let sleepStatsVC = segue.destination as? SleepStatsViewController, segue.identifier == "viewSleepStats" {
+            sleepStatsVC.sleepLogs = sender as? [SleepLogEntry] ?? []
+        }
     }
     
 }
