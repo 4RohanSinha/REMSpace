@@ -94,7 +94,7 @@ class LandingPageVC: CoreDataStackViewController {
     
     @objc func sleepStatsScreen() {
         let sleepLogFetchRequest = SleepLogEntry.fetchRequest()
-        if let sleepLogs = try? dataController?.viewContext.fetch(sleepLogFetchRequest) {
+        if let sleepLogs = try? dataController?.viewContext.fetch(sleepLogFetchRequest), UserDefaults.standard.bool(forKey: "isLoggedIn") {
             performSegue(withIdentifier: "viewSleepStats", sender: sleepLogs)
         }
     }

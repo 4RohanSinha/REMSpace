@@ -15,6 +15,7 @@ class SleepStatsUserControl: UIView {
     
     @IBOutlet weak var sleepStatsTitleLbl: UILabel!
     @IBOutlet weak var sleepDatePicker: UIDatePicker!
+    @IBOutlet weak var detailBtn: UIImageView!
     
     var dataController: DataController?
     var sleepLogsFetchedResultsController: NSFetchedResultsController<SleepLogEntry>?
@@ -80,6 +81,7 @@ class SleepStatsUserControl: UIView {
             circleProgressView.isHidden = false
             sleepStatsTitleLbl.text = "Sleep Stats"
             sleepDatePicker.isHidden = false
+            detailBtn.isHidden = false
             
             if (sleepDatePicker.date >= getStartAndEndDates(date: Date()).0 && sleepDatePicker.date <= getStartAndEndDates(date: Date()).1) {
                 sleepDatePicker.date = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
@@ -105,6 +107,7 @@ class SleepStatsUserControl: UIView {
             circleProgressView.isHidden = true
             sleepStatsTitleLbl.text = "Sign in above to view stats"
             sleepDatePicker.isHidden = true
+            detailBtn.isHidden = true
         }
     }
     

@@ -458,6 +458,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="circleLocation" destination="fWX-g1-AZG" id="DIu-ke-rMc"/>
+                                    <outlet property="detailBtn" destination="Fj4-rd-cCC" id="WyV-6D-Ibm"/>
                                     <outlet property="progressScoreLbl" destination="uQF-6c-E7n" id="lpU-Vf-ySR"/>
                                     <outlet property="sleepDatePicker" destination="qeC-rd-tw6" id="uMf-io-Rh5"/>
                                     <outlet property="sleepStatsTitleLbl" destination="9Ou-mF-R8l" id="uj6-Mx-D5e"/>
@@ -535,7 +536,7 @@
                                         <rect key="frame" x="0.0" y="270" width="353" height="405"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="wH9-cZ-oEc">
-                                                <rect key="frame" x="118.66666666666666" y="355" width="116" height="26"/>
+                                                <rect key="frame" x="118.66666666666666" y="370.66666666666663" width="116" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="116" id="RGT-e1-mAr"/>
                                                 </constraints>
@@ -546,7 +547,7 @@
                                                 </connections>
                                             </pageControl>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75W-v0-UFh">
-                                                <rect key="frame" x="134" y="60.333333333333314" width="85" height="85"/>
+                                                <rect key="frame" x="134" y="76" width="85" height="85"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="#" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7MW-ZH-L4m">
                                                         <rect key="frame" x="9" y="25" width="66" height="34"/>
@@ -563,19 +564,19 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total sleep score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3f-XY-JEN">
-                                                <rect key="frame" x="110.66666666666666" y="165.33333333333337" width="132" height="20.333333333333343"/>
+                                                <rect key="frame" x="110.66666666666666" y="181" width="132" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VK-y9-sbc">
-                                                <rect key="frame" x="15" y="14.999999999999998" width="323" height="20.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="15" y="15" width="323" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                                <color key="textColor" systemColor="systemPurpleColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lBP-DA-1LQ">
-                                                <rect key="frame" x="15" y="215.66666666666666" width="323" height="109.33333333333334"/>
+                                                <rect key="frame" x="15" y="231.3333333333334" width="323" height="109.33333333333334"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wdp-4h-3kf">
                                                         <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="109.33333333333333"/>
