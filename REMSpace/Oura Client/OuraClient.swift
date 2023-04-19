@@ -44,7 +44,7 @@ class OuraClient {
     class func fetchSleepData(completion: @escaping (OuraSleepResponse?, Error?) -> Void) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
-        taskForGETRequest(url: Endpoints.fetchSleepData("04-05-2023", dateFormatter.string(from: Date())).url, response: OuraSleepResponse.self, completion: completion)
+        taskForGETRequest(url: Endpoints.fetchSleepData("01-01-1990", dateFormatter.string(from: Date())).url, response: OuraSleepResponse.self, completion: completion)
     }
         
     @discardableResult class func taskForGETRequest<ResponseType: Decodable>(url: URL, response: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
