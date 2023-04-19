@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class SleepStatsViewController: UIViewController {
+class SleepStatsViewController: CoreDataStackViewController {
     @IBOutlet weak var graphView: UIView!
     var graphVC: UIHostingController<SleepLogGraph>!
     
@@ -20,28 +20,36 @@ class SleepStatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        graphVC = UIHostingController(rootView: SleepLogGraph(sleepLogs: sleepLogs, currentSleepLogIdx: currentSleepLogIndex))
+        graphVC = UIHostingController(rootView: SleepLogGraph(sleepLogs: sleepLogs, currentSleepLogIdx: currentSleepLogIndex, onLogTap: updatePageView(sleepLogIdx:)))
         addChild(graphVC)
         
         graphVC.view.frame = graphView.frame
         graphView.addSubview(graphVC.view)
         graphVC.didMove(toParent: self)
         
+        sleepDataByDayView.dataController = dataController
         sleepDataByDayView.configure(sleepLogs: sleepLogs, currentSleepLogIdx: currentSleepLogIndex, updateHandler: reload(sleepLogIdx:))
         sleepDataByDayView.updateViews()
     }
     
+    func updatePageView(sleepLogIdx: Int) {
+        sleepDataByDayView.currentSleepLogIdx = sleepLogIdx
+    }
+    
+    
     func reload(sleepLogIdx: Int) {
         currentSleepLogIndex = sleepLogIdx
+        
         graphVC.view.removeFromSuperview()
         graphVC.removeFromParent()
         
-        graphVC.rootView = SleepLogGraph(sleepLogs: sleepLogs, currentSleepLogIdx: currentSleepLogIndex)
+        graphVC.rootView = SleepLogGraph(sleepLogs: sleepLogs, currentSleepLogIdx: sleepLogIdx, onLogTap: updatePageView(sleepLogIdx:))
         addChild(graphVC)
         
         graphVC.view.frame = graphView.frame
         graphView.addSubview(graphVC.view)
         graphVC.didMove(toParent: self)
+        
         
     }
 }

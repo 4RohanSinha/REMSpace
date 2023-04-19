@@ -23,6 +23,7 @@
 		1C8E91A929E643DE00A695B6 /* DailySleepDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E91A829E643DE00A695B6 /* DailySleepDataView.swift */; };
 		1C9C0C0829E3E1D30086E72B /* AirTableActivityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C0C0729E3E1D30086E72B /* AirTableActivityResponse.swift */; };
 		1C9C0C0A29E3E38B0086E72B /* AirTableClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C0C0929E3E38B0086E72B /* AirTableClient.swift */; };
+		1CD1023429EE44F600D654EB /* PastActivityRecapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD1023329EE44F600D654EB /* PastActivityRecapCell.swift */; };
 		1CD7ED4F29E116350006F735 /* OuraClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED4E29E116350006F735 /* OuraClient.swift */; };
 		1CD7ED5329E134E30006F735 /* OuraAccessTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED5229E134E30006F735 /* OuraAccessTokenRequest.swift */; };
 		1CD7ED5729E149910006F735 /* OuraPersonalInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7ED5629E149910006F735 /* OuraPersonalInfoResponse.swift */; };
@@ -54,6 +55,7 @@
 		1C8E91A829E643DE00A695B6 /* DailySleepDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySleepDataView.swift; sourceTree = "<group>"; };
 		1C9C0C0729E3E1D30086E72B /* AirTableActivityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirTableActivityResponse.swift; sourceTree = "<group>"; };
 		1C9C0C0929E3E38B0086E72B /* AirTableClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirTableClient.swift; sourceTree = "<group>"; };
+		1CD1023329EE44F600D654EB /* PastActivityRecapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastActivityRecapCell.swift; sourceTree = "<group>"; };
 		1CD7ED4E29E116350006F735 /* OuraClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraClient.swift; sourceTree = "<group>"; };
 		1CD7ED5229E134E30006F735 /* OuraAccessTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraAccessTokenRequest.swift; sourceTree = "<group>"; };
 		1CD7ED5629E149910006F735 /* OuraPersonalInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuraPersonalInfoResponse.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				1C8E91A829E643DE00A695B6 /* DailySleepDataView.swift */,
 				1C78166229E7878C002565D7 /* SleepLogGraph.swift */,
+				1CD1023329EE44F600D654EB /* PastActivityRecapCell.swift */,
 			);
 			path = "Sleep Stats";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				1C63715529DFD2CC008EA76F /* MinMaxTableView.swift in Sources */,
 				1C78166329E7878C002565D7 /* SleepLogGraph.swift in Sources */,
 				1C63714729DF9F9F008EA76F /* LandingPageVC.swift in Sources */,
+				1CD1023429EE44F600D654EB /* PastActivityRecapCell.swift in Sources */,
 				1C63714F29DFB914008EA76F /* ActivitySummaryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

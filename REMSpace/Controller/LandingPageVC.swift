@@ -157,6 +157,7 @@ class LandingPageVC: CoreDataStackViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let sleepStatsVC = segue.destination as? SleepStatsViewController, segue.identifier == "viewSleepStats" {
+            sleepStatsVC.dataController = dataController
             sleepStatsVC.sleepLogs = sender as? [SleepLogEntry] ?? []
         }
     }
