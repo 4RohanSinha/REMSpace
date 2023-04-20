@@ -62,7 +62,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let urls = urlContexts.map { $0.url }
         for url in urls {
             var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-            print(url)
             if components?.scheme! == "remspace" {//} && components?.path == "authenticate" {
                 var path = components?.path
                 
@@ -78,9 +77,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 
                 if let queryItems = components?.queryItems {
                     for queryItem in queryItems {
-                        print(queryItem)
                         if let queryValue = queryItem.value, let landingPageVC = (window?.rootViewController as? UINavigationController)?.topViewController as? LandingPageVC, queryItem.name == "access_token" {
-                            print("hello 1")
                             UserDefaults.standard.set(true, forKey: "isLoggedIn")
                             UserDefaults.standard.set(queryValue, forKey: "ouraAccessToken")
                             OuraClient.fetchPersonalInfo( completion: landingPageVC.onPersonalInfoComplete(response:error:))

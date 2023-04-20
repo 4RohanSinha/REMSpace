@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SleepLogGraph: View {
     var sleepLogs: [SleepLogEntry] = []
+    
     var currentSleepLogIdx: Int?
     var onLogTap: ((Int) -> ())?
     
@@ -74,7 +75,6 @@ struct SleepLogGraphDataPoints: View {
             let tap = TapGesture()
                 .onEnded { _ in
                     if let ind = dataPoints.firstIndex(of: logEntry) {
-                        print(ind)
                         onLogTap?(ind)
                     }
                 }

@@ -9,7 +9,7 @@ import Foundation
 
 class OuraSleepResponse: Codable {
     var data: [OuraSleepLog]
-    var next_token: String
+    var next_token: String?
 }
 
 class OuraSleepLog: Codable {

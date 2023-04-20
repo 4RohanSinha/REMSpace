@@ -261,16 +261,16 @@
                                 <rect key="frame" x="0.0" y="203" width="393" height="125"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="std-Gt-QE4">
-                                        <rect key="frame" x="110" y="18.666666666666657" width="126" height="88"/>
+                                        <rect key="frame" x="110" y="18.666666666666657" width="128" height="88"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep Stats" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ou-mF-R8l">
-                                                <rect key="frame" x="0.0" y="0.0" width="126" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="qeC-rd-tw6">
-                                                <rect key="frame" x="0.0" y="38.000000000000028" width="126" height="50"/>
+                                                <rect key="frame" x="0.0" y="38.000000000000028" width="128" height="50"/>
                                                 <connections>
                                                     <action selector="onDatePickerChange:" destination="cdX-if-xFU" eventType="touchDragInside" id="J0O-U8-Xgt"/>
                                                     <action selector="onDatePickerChange:" destination="cdX-if-xFU" eventType="valueChanged" id="rC8-GE-UJ3"/>
@@ -300,6 +300,9 @@
                                             <constraint firstAttribute="width" constant="60" id="kHB-dj-KzP"/>
                                         </constraints>
                                     </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="asy-5a-vsx">
+                                        <rect key="frame" x="268" y="23.666666666666657" width="20" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
@@ -307,11 +310,14 @@
                                     <constraint firstItem="uQF-6c-E7n" firstAttribute="centerX" secondItem="fWX-g1-AZG" secondAttribute="centerX" id="Fqg-hH-0ap"/>
                                     <constraint firstItem="Fj4-rd-cCC" firstAttribute="centerY" secondItem="cdX-if-xFU" secondAttribute="centerY" id="HtR-fH-4yj"/>
                                     <constraint firstItem="fWX-g1-AZG" firstAttribute="centerY" secondItem="cdX-if-xFU" secondAttribute="centerY" id="P1i-v5-MSZ"/>
+                                    <constraint firstItem="asy-5a-vsx" firstAttribute="centerY" secondItem="9Ou-mF-R8l" secondAttribute="centerY" id="UEU-zj-28t"/>
                                     <constraint firstAttribute="trailing" secondItem="Fj4-rd-cCC" secondAttribute="trailing" constant="15" id="Wgc-0r-QgF"/>
+                                    <constraint firstItem="Fj4-rd-cCC" firstAttribute="leading" secondItem="asy-5a-vsx" secondAttribute="trailing" constant="30" id="XG8-Ji-lCQ"/>
                                     <constraint firstAttribute="height" constant="125" id="aaa-j5-Lg1"/>
                                     <constraint firstItem="std-Gt-QE4" firstAttribute="centerY" secondItem="cdX-if-xFU" secondAttribute="centerY" id="byW-Hv-CF0"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="std-Gt-QE4" secondAttribute="trailing" constant="95" id="gzK-r2-P0d"/>
                                     <constraint firstItem="fWX-g1-AZG" firstAttribute="leading" secondItem="cdX-if-xFU" secondAttribute="leading" constant="15" id="uUd-h3-kZI"/>
+                                    <constraint firstItem="asy-5a-vsx" firstAttribute="leading" secondItem="std-Gt-QE4" secondAttribute="trailing" constant="30" id="wL2-Rm-KqS"/>
                                     <constraint firstItem="uQF-6c-E7n" firstAttribute="centerY" secondItem="fWX-g1-AZG" secondAttribute="centerY" id="zTS-hK-jab"/>
                                 </constraints>
                                 <connections>
@@ -363,6 +369,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activitiesTableView" destination="gW4-Ut-u1X" id="6I6-23-exV"/>
+                        <outlet property="currentStatsDate" destination="qeC-rd-tw6" id="91M-W8-fYQ"/>
+                        <outlet property="loadingSleepStatsIndicator" destination="asy-5a-vsx" id="BkF-26-K04"/>
                         <outlet property="sleepStatsCtrlView" destination="cdX-if-xFU" id="36e-52-8lM"/>
                         <outlet property="userAcctCtrlView" destination="JuZ-4E-oQu" id="bj0-BN-kFv"/>
                         <segue destination="Pwf-6y-b94" kind="show" identifier="viewSleepStats" id="0nP-Rx-S7h"/>
@@ -503,7 +511,7 @@
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gMu-bk-x95">
                                                 <rect key="frame" x="15" y="50" width="323" height="100"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="cVk-uN-ZjL"/>
                                                 </constraints>
@@ -549,6 +557,13 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No activities recorded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B42-dj-EKc">
+                                                <rect key="frame" x="93" y="90" width="172" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <constraints>
@@ -572,6 +587,7 @@
                                         <connections>
                                             <outlet property="dateTitleLbl" destination="0VK-y9-sbc" id="9Ic-Or-yUC"/>
                                             <outlet property="daysActivitiesTableView" destination="gMu-bk-x95" id="UEi-X4-frO"/>
+                                            <outlet property="noActivitiesRecordedLbl" destination="B42-dj-EKc" id="ANG-OA-Tq5"/>
                                             <outlet property="remQualityIndicator" destination="dLz-jW-v9L" id="MCI-nD-GfV"/>
                                             <outlet property="remQualityTxtField" destination="8hl-dV-PSr" id="FC6-Z8-q1l"/>
                                             <outlet property="restfulnessIndicator" destination="a0D-di-YZS" id="fIq-lh-BLO"/>

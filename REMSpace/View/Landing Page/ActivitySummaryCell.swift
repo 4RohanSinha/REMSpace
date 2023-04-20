@@ -21,6 +21,5 @@ class ActivitySummaryCell: UITableViewCell {
     func configureWithActivity(activity: Activity) {
         activityNameLbl.text = activity.name
         activityComplete.isOn = activity.isComplete
-        //activityComplete.onTap = onCheckboxTap
     }
 }

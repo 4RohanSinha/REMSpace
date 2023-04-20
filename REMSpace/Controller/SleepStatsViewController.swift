@@ -13,14 +13,32 @@ class SleepStatsViewController: CoreDataStackViewController {
     var graphVC: UIHostingController<SleepLogGraph>!
     
     @IBOutlet weak var sleepDataByDayView: DailySleepDataView!
-    
+        
     var sleepLogs: [SleepLogEntry] = []
     var currentSleepLogIndex: Int?
+    
+    var graphStartIdx: Int?
+    var graphEndIdx: Int?
+    
+    
+    var sleepLogsSubset: [SleepLogEntry] {
+        return Array(sleepLogs[graphStartIdx!...graphEndIdx!])
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        graphVC = UIHostingController(rootView: SleepLogGraph(sleepLogs: sleepLogs, currentSleepLogIdx: currentSleepLogIndex, onLogTap: updatePageView(sleepLogIdx:)))
+        graphEndIdx = currentSleepLogIndex ?? (sleepLogs.count - 1)
+        
+        if let currentIdx = currentSleepLogIndex, currentIdx >= 10 {
+            graphStartIdx = currentIdx - 9
+        } else {
+            currentSleepLogIndex = graphEndIdx
+            graphStartIdx = graphEndIdx! - 9
+        }
+
+        
+        graphVC = UIHostingController(rootView: SleepLogGraph(sleepLogs: sleepLogsSubset, currentSleepLogIdx: currentSleepLogIndex! - graphStartIdx!, onLogTap: updatePageView(sleepLogIdx:)))
         addChild(graphVC)
         
         graphVC.view.frame = graphView.frame
@@ -33,7 +51,8 @@ class SleepStatsViewController: CoreDataStackViewController {
     }
     
     func updatePageView(sleepLogIdx: Int) {
-        sleepDataByDayView.currentSleepLogIdx = sleepLogIdx
+        currentSleepLogIndex = sleepLogIdx
+        sleepDataByDayView.currentSleepLogIdx = sleepLogIdx + self.graphStartIdx!
     }
     
     
@@ -43,7 +62,28 @@ class SleepStatsViewController: CoreDataStackViewController {
         graphVC.view.removeFromSuperview()
         graphVC.removeFromParent()
         
-        graphVC.rootView = SleepLogGraph(sleepLogs: sleepLogs, currentSleepLogIdx: sleepLogIdx, onLogTap: updatePageView(sleepLogIdx:))
+        if (sleepLogIdx < graphStartIdx!) {
+            graphEndIdx = sleepLogIdx
+            currentSleepLogIndex = graphEndIdx!
+            graphStartIdx = sleepLogIdx - 9
+            
+        }
+        
+        if (sleepLogIdx > graphEndIdx!) {
+            graphStartIdx = sleepLogIdx
+            currentSleepLogIndex = graphStartIdx!
+            graphEndIdx = sleepLogIdx + 9
+        }
+        
+        if (graphStartIdx! < 0) {
+            graphStartIdx = 0
+        }
+        
+        if (graphEndIdx! > sleepLogs.count - 1) {
+            graphEndIdx = sleepLogs.count - 1
+        }
+        
+        graphVC.rootView = SleepLogGraph(sleepLogs: sleepLogsSubset, currentSleepLogIdx: sleepLogIdx - graphStartIdx!, onLogTap: updatePageView(sleepLogIdx:))
         addChild(graphVC)
         
         graphVC.view.frame = graphView.frame

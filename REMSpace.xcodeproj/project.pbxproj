@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C3AFC6629E08CBA00A93334 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */; };
+		1C614EF229F087640015689F /* ActivityDateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C614EF129F087640015689F /* ActivityDateConverter.swift */; };
+		1C614EF529F090CB0015689F /* SleepStatsGraphIdxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C614EF429F090CB0015689F /* SleepStatsGraphIdxManager.swift */; };
 		1C63714729DF9F9F008EA76F /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714629DF9F9F008EA76F /* LandingPageVC.swift */; };
 		1C63714929DFA05C008EA76F /* UserAccountControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714829DFA05C008EA76F /* UserAccountControlView.swift */; };
 		1C63714B29DFA797008EA76F /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714A29DFA797008EA76F /* CircularProgressBarView.swift */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		1C614EF129F087640015689F /* ActivityDateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDateConverter.swift; sourceTree = "<group>"; };
+		1C614EF429F090CB0015689F /* SleepStatsGraphIdxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStatsGraphIdxManager.swift; sourceTree = "<group>"; };
 		1C63714629DF9F9F008EA76F /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
 		1C63714829DFA05C008EA76F /* UserAccountControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountControlView.swift; sourceTree = "<group>"; };
 		1C63714A29DFA797008EA76F /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
@@ -83,6 +87,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C614EF029F0874B0015689F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */,
+				1C614EF129F087640015689F /* ActivityDateConverter.swift */,
+				1C614EF429F090CB0015689F /* SleepStatsGraphIdxManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1C614EF329F08A390015689F /* Helper Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C63714A29DFA797008EA76F /* CircularProgressBarView.swift */,
+				1C63715229DFCBFA008EA76F /* Checkbox.swift */,
+				1C63715429DFD2CC008EA76F /* MinMaxTableView.swift */,
+			);
+			path = "Helper Views";
+			sourceTree = "<group>";
+		};
 		1C7E235129C2969300D8820D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,7 +114,6 @@
 				1C7E235429C297F800D8820D /* ActivityRecommender.swift */,
 				1C7E235829C29AB200D8820D /* Activity+Ext.swift */,
 				1CF53AB829C6A26600E12489 /* DataController.swift */,
-				1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,12 +121,10 @@
 		1C7E235229C296A000D8820D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1CF677FE29BEDDB100B523E0 /* Main.storyboard */,
+				1C614EF329F08A390015689F /* Helper Views */,
 				1C8E91AB29E6442700A695B6 /* Sleep Stats */,
 				1C8E91AA29E643FD00A695B6 /* Landing Page */,
-				1CF677FE29BEDDB100B523E0 /* Main.storyboard */,
-				1C63714A29DFA797008EA76F /* CircularProgressBarView.swift */,
-				1C63715229DFCBFA008EA76F /* Checkbox.swift */,
-				1C63715429DFD2CC008EA76F /* MinMaxTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +215,7 @@
 		1CF677F729BEDDB100B523E0 /* REMSpace */ = {
 			isa = PBXGroup;
 			children = (
+				1C614EF029F0874B0015689F /* Services */,
 				1C9C0C0629E3E1B20086E72B /* AirTable Client */,
 				1CD7ED4D29E1156B0006F735 /* Oura Client */,
 				1C7E235329C296A500D8820D /* Controller */,
@@ -299,9 +321,11 @@
 				1CF677FB29BEDDB100B523E0 /* SceneDelegate.swift in Sources */,
 				1CD7ED5329E134E30006F735 /* OuraAccessTokenRequest.swift in Sources */,
 				1C63714D29DFAB2C008EA76F /* SleepStatsUserControl.swift in Sources */,
+				1C614EF529F090CB0015689F /* SleepStatsGraphIdxManager.swift in Sources */,
 				1CD7ED5729E149910006F735 /* OuraPersonalInfoResponse.swift in Sources */,
 				1C63715529DFD2CC008EA76F /* MinMaxTableView.swift in Sources */,
 				1C78166329E7878C002565D7 /* SleepLogGraph.swift in Sources */,
+				1C614EF229F087640015689F /* ActivityDateConverter.swift in Sources */,
 				1C63714729DF9F9F008EA76F /* LandingPageVC.swift in Sources */,
 				1CD1023429EE44F600D654EB /* PastActivityRecapCell.swift in Sources */,
 				1C63714F29DFB914008EA76F /* ActivitySummaryCell.swift in Sources */,

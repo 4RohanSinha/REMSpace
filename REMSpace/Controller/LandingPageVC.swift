@@ -16,22 +16,14 @@ class LandingPageVC: CoreDataStackViewController {
     @IBOutlet weak var sleepStatsCtrlView: SleepStatsUserControl!
     
     @IBOutlet weak var activitiesTableView: MinMaxTableView!
+    
+    @IBOutlet weak var loadingSleepStatsIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var currentStatsDate: UIDatePicker!
+    
     var activitiesFetchedResultsController: NSFetchedResultsController<Activity>?
     
-    func getStartAndEndDates(date: Date) -> (Date, Date) {
-        var startComponents = Calendar.current.dateComponents(Set([.year, .month, .day]), from: date)
-        var endComponents = Calendar.current.dateComponents(Set([.year, .month, .day]), from: date)
-        
-        startComponents.hour = 0
-        startComponents.minute = 0
-        startComponents.second = 0
-        
-        endComponents.hour = 23
-        endComponents.minute = 59
-        endComponents.second = 59
-        
-        return (Calendar.current.date(from: startComponents)!, Calendar.current.date(from: endComponents)!)
-    }
+    var isLoadingSleepData: Bool = false
     
     func configureFetchedResultsController() {
         guard let dataController = dataController else { return }
@@ -39,7 +31,7 @@ class LandingPageVC: CoreDataStackViewController {
         let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
-        let dateRange = getStartAndEndDates(date: Date())
+        let dateRange = ActivityDateConverter.getStartAndEndDates(date: Date())
         
         fetchRequest.predicate = NSPredicate(format: "(date >= %@) AND (date <= %@)", dateRange.0 as CVarArg, dateRange.1 as CVarArg)
         
@@ -78,6 +70,7 @@ class LandingPageVC: CoreDataStackViewController {
         super.viewWillAppear(animated)
         configureFetchedResultsController()
         updateViews()
+        self.loadingSleepStatsIndicator.isHidden = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -88,13 +81,15 @@ class LandingPageVC: CoreDataStackViewController {
     
     @objc func logInScreen() {
         if (!UserDefaults.standard.bool(forKey: "isLoggedIn")) {
+            self.loadingSleepStatsIndicator.isHidden = false
+            self.loadingSleepStatsIndicator.startAnimating()
             UIApplication.shared.open(OuraClient.Endpoints.loginOauth.url, options: [:], completionHandler: nil)
         }
     }
     
     @objc func sleepStatsScreen() {
         let sleepLogFetchRequest = SleepLogEntry.fetchRequest()
-        if let sleepLogs = try? dataController?.viewContext.fetch(sleepLogFetchRequest), UserDefaults.standard.bool(forKey: "isLoggedIn") {
+        if let sleepLogs = try? dataController?.viewContext.fetch(sleepLogFetchRequest), UserDefaults.standard.bool(forKey: "isLoggedIn") && !isLoadingSleepData {
             performSegue(withIdentifier: "viewSleepStats", sender: sleepLogs)
         }
     }
@@ -118,9 +113,7 @@ class LandingPageVC: CoreDataStackViewController {
                 
                 dataController.viewContext.perform {
                     for sleepLogData in sleepLogsData {
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "YYYY-MM-dd"
-                        let date = dateFormatter.date(from: sleepLogData.day)
+                        let date = ActivityDateConverter.getDateFromString(string: sleepLogData.day)
                         
                         let entry = SleepLogEntry(context: dataController.viewContext)
                         entry.date = date
@@ -129,11 +122,15 @@ class LandingPageVC: CoreDataStackViewController {
                         entry.restfulnessScore = Int16(sleepLogData.contributors.restfulness)
                         
                         try? dataController.viewContext.save()
-                        
                     }
+                    
+                    self.updateViews()
+                    
+                    self.isLoadingSleepData = false
+                    self.loadingSleepStatsIndicator.isHidden = true
+                    self.loadingSleepStatsIndicator.stopAnimating()
                 }
                 
-                self.updateViews()
             }
         }
     }
@@ -159,6 +156,9 @@ class LandingPageVC: CoreDataStackViewController {
         if let sleepStatsVC = segue.destination as? SleepStatsViewController, segue.identifier == "viewSleepStats" {
             sleepStatsVC.dataController = dataController
             sleepStatsVC.sleepLogs = sender as? [SleepLogEntry] ?? []
+            sleepStatsVC.currentSleepLogIndex = (sleepStatsVC.sleepLogs.sorted {$0.date! < $1.date!}).firstIndex { $0.date! >= ActivityDateConverter.getStartAndEndDates(date: currentStatsDate.date).0 && $0.date! <= ActivityDateConverter.getStartAndEndDates(date: currentStatsDate.date).1 }
+            
+
         }
     }
     
@@ -209,10 +209,9 @@ extension LandingPageVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let tableView = tableView as? MinMaxTableView, let curActivityName = activitiesFetchedResultsController?.object(at: indexPath).name {
-            tableView.maximizedRow = indexPath
-            
+        if let tableView = tableView as? MinMaxTableView, let curActivityName = activitiesFetchedResultsController?.object(at: indexPath).name, indexPath != tableView.maximizedRow {
             TextToSpeech.speak(msg: curActivityName)
+            tableView.maximizedRow = indexPath
         }
 
     }
@@ -230,6 +229,8 @@ extension LandingPageVC: NSFetchedResultsControllerDelegate {
             activitiesTableView.moveRow(at: indexPath!, to: newIndexPath!)
         case .update:
             activitiesTableView.reloadRows(at: [indexPath!], with: .automatic)
+        @unknown default:
+            return
         }
     }
     

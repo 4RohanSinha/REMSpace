@@ -25,7 +25,6 @@ class CircularProgressBarView: UIView {
             circleLayer = CAShapeLayer()
             progressLayer = CAShapeLayer()
             createCircularPath()
-            //MARK: edit view
         }
     }
     
@@ -48,7 +47,6 @@ class CircularProgressBarView: UIView {
     func createCircularPath() {
        
         let circle = UIBezierPath(arcCenter: CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0), radius: frame.size.width/3.0, startAngle: startPoint, endAngle: endPoint, clockwise: true)
-        //let circle = UIBezierPath(arcCenter: CGPoint.zero, radius: 80, startAngle: startPoint, endAngle: endPoint, clockwise: true)
 
         circleLayer.path = circle.cgPath
         circleLayer.fillColor = UIColor.clear.cgColor

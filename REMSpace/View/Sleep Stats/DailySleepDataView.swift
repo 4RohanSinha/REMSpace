@@ -25,6 +25,8 @@ class DailySleepDataView: UIView {
     
     @IBOutlet weak var daysActivitiesTableView: UITableView!
     
+    @IBOutlet weak var noActivitiesRecordedLbl: UILabel!
+    
     //MARK: add timing
     @IBOutlet weak var sleepLogsPageCtrl: UIPageControl!
     
@@ -56,7 +58,7 @@ class DailySleepDataView: UIView {
         sleepScoreProgressView = CircularProgressBarView(frame: sleepScoreIndicator.frame)
         addSubview(sleepScoreProgressView)
         
-        if let remQualityFrame = remQualityIndicator.superview?.convert(remQualityIndicator.frame, to: self.coordinateSpace), let remQualityCtr = remQualityIndicator.superview?.convert(remQualityTxtField.center, to: self.coordinateSpace) {
+        if let remQualityFrame = remQualityIndicator.superview?.convert(remQualityIndicator.frame, to: self.coordinateSpace) {
             remQualityProgressView = CircularProgressBarView(frame: remQualityFrame)
         }
         
@@ -85,7 +87,8 @@ class DailySleepDataView: UIView {
         sleepLogsPageCtrl.numberOfPages = sleepLogs.count
         self.currentSleepLogIdx = currentSleepLogIdx ?? self.sleepLogs.count - 1
         self.updateHandler = updateHandler
-            }
+        self.noActivitiesRecordedLbl.isHidden = true
+    }
     
     func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -102,9 +105,6 @@ class DailySleepDataView: UIView {
         let currentSleepLog = sleepLogs[currentSleepLogIdx]
         
         dateTitleLbl.text = formatDate(date: currentSleepLog.date ?? Date())
-        
-        //sleepLogsPageCtrl.numberOfPages = sleepLogs.count
-        //print(sleepLogs.count)
         
         sleepScoreTxtField.text = String(describing: currentSleepLog.sleepScore)
         sleepScoreProgressView.progressValue = Float(currentSleepLog.sleepScore)/100
@@ -140,35 +140,26 @@ class DailySleepDataView: UIView {
 
 extension DailySleepDataView: UITableViewDataSource, UITableViewDelegate {
     
-    func getStartAndEndDates(date: Date) -> (Date, Date) {
-        var startComponents = Calendar.current.dateComponents(Set([.year, .month, .day]), from: date)
-        var endComponents = Calendar.current.dateComponents(Set([.year, .month, .day]), from: date)
-        
-        startComponents.hour = 0
-        startComponents.minute = 0
-        startComponents.second = 0
-        
-        endComponents.hour = 23
-        endComponents.minute = 59
-        endComponents.second = 59
-        
-        return (Calendar.current.date(from: startComponents)!, Calendar.current.date(from: endComponents)!)
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if let currentSleepLogIdx = currentSleepLogIdx,             let currentSleepLogDate = sleepLogs[currentSleepLogIdx].date {
+ 
+        if let currentSleepLogIdx = currentSleepLogIdx, let currentSleepLogDate = sleepLogs[currentSleepLogIdx].date {
             let activitiesFetchRequest = Activity.fetchRequest()
-            activitiesFetchRequest.predicate = NSPredicate(format: "date >= %@ AND date <= %@", getStartAndEndDates(date: currentSleepLogDate).0 as CVarArg, getStartAndEndDates(date: currentSleepLogDate).1 as CVarArg)
+            activitiesFetchRequest.predicate = NSPredicate(format: "date >= %@ AND date <= %@", ActivityDateConverter.getStartAndEndDates(date: currentSleepLogDate).0 as CVarArg, ActivityDateConverter.getStartAndEndDates(date: currentSleepLogDate).1 as CVarArg)
             
             if let activities = try? dataController?.viewContext.fetch(activitiesFetchRequest) {
                 self.dayActivities = activities
-                print(self.dayActivities.map { $0.date })
             }
             
         }
         
-        print(dayActivities.count)
+        if dayActivities.count == 0 {
+            tableView.isHidden = true
+            noActivitiesRecordedLbl.isHidden = false
+        } else {
+            tableView.isHidden = false
+            noActivitiesRecordedLbl.isHidden = true
+        }
+        
         return dayActivities.count
     }
     
