@@ -81,6 +81,8 @@ class SleepStatsUserControl: UIView {
             circleProgressView.isHidden = false
             sleepStatsTitleLbl.text = "Sleep Stats"
             sleepDatePicker.isHidden = false
+            
+            
             detailBtn.isHidden = false
             
             if (sleepDatePicker.date >= getStartAndEndDates(date: Date()).0 && sleepDatePicker.date <= getStartAndEndDates(date: Date()).1) {
@@ -98,9 +100,11 @@ class SleepStatsUserControl: UIView {
             if let filteredObjects = filteredObjects, filteredObjects.count > 0 {
                 circleProgressView.isHidden = false
                 currentSleepScore = Int(filteredObjects[0].sleepScore)
+                detailBtn.isHidden = false
             } else {
                 progressScoreLbl.text = "-"
                 circleProgressView.isHidden = true
+                detailBtn.isHidden = true
             }
         } else {
             progressScoreLbl.text = ""

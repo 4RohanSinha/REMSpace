@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C3AFC6629E08CBA00A93334 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */; };
+		1C49FF5B29F1FEBF008D1D1F /* InformationalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C49FF5A29F1FEBF008D1D1F /* InformationalViewController.swift */; };
 		1C614EF229F087640015689F /* ActivityDateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C614EF129F087640015689F /* ActivityDateConverter.swift */; };
 		1C614EF529F090CB0015689F /* SleepStatsGraphIdxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C614EF429F090CB0015689F /* SleepStatsGraphIdxManager.swift */; };
 		1C63714729DF9F9F008EA76F /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C63714629DF9F9F008EA76F /* LandingPageVC.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		1C3AFC6529E08CBA00A93334 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		1C49FF5A29F1FEBF008D1D1F /* InformationalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationalViewController.swift; sourceTree = "<group>"; };
 		1C614EF129F087640015689F /* ActivityDateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDateConverter.swift; sourceTree = "<group>"; };
 		1C614EF429F090CB0015689F /* SleepStatsGraphIdxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepStatsGraphIdxManager.swift; sourceTree = "<group>"; };
 		1C63714629DF9F9F008EA76F /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				1CF53ABA29C6A29700E12489 /* CoreDataStackViewController.swift */,
 				1C63714629DF9F9F008EA76F /* LandingPageVC.swift */,
 				1C8E91A629E6438800A695B6 /* SleepStatsViewController.swift */,
+				1C49FF5A29F1FEBF008D1D1F /* InformationalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				1C3AFC6629E08CBA00A93334 /* TextToSpeech.swift in Sources */,
 				1C8E91A729E6438800A695B6 /* SleepStatsViewController.swift in Sources */,
 				1C63714B29DFA797008EA76F /* CircularProgressBarView.swift in Sources */,
+				1C49FF5B29F1FEBF008D1D1F /* InformationalViewController.swift in Sources */,
 				1CF720EC29E354F0001DCD41 /* OuraSleepResponse.swift in Sources */,
 				1C7E235529C297F800D8820D /* ActivityRecommender.swift in Sources */,
 				1C63715129DFB95F008EA76F /* ActivityDescriptionCell.swift in Sources */,

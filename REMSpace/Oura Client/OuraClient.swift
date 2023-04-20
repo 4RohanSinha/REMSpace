@@ -28,7 +28,7 @@ class OuraClient {
                 return OuraClient.Endpoints.urlBase + "/usercollection/personal_info"
             case .fetchSleepData(let startDate, let endDate):
                 return "https://api.ouraring.com/v2/usercollection/daily_sleep?start_date=\(startDate)&end_date=\(endDate)"
-                //return "http://192.168.1.76:3000/sleepData?start_date=\(startDate)&end_date=\(endDate)"
+                //return "http://172.16.98.57:3000/sleepData?start_date=\(startDate)&end_date=\(endDate)"
             }
         }
         

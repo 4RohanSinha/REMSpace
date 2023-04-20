@@ -120,7 +120,7 @@
                                                                                 <constraint firstAttribute="width" secondItem="G1v-I5-P3i" secondAttribute="height" multiplier="1:1" id="OTA-40-aXL"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4b-Bl-kdW">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="i4b-Bl-kdW">
                                                                             <rect key="frame" x="60" y="0.0" width="223" height="31"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -195,7 +195,7 @@
                                                                         <constraint firstAttribute="width" secondItem="0cf-JU-fVc" secondAttribute="height" multiplier="1:1" id="5LL-jW-Akx"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqx-ES-U5J">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="tqx-ES-U5J">
                                                                     <rect key="frame" x="63" y="0.0" width="217" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -364,6 +364,9 @@
                                 <color key="tintColor" systemColor="systemPurpleColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="questionmark.circle" catalog="system"/>
+                                <connections>
+                                    <segue destination="g0u-aM-dc0" kind="presentation" id="6Rz-fd-0C1"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -379,6 +382,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ij2-uZ-chD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1014.5038167938931" y="-1418.3098591549297"/>
+        </scene>
+        <!--Informational View Controller-->
+        <scene sceneID="FTl-DV-Rmq">
+            <objects>
+                <viewController id="g0u-aM-dc0" customClass="InformationalViewController" customModule="REMSpace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B4I-f0-hVF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to REMSpace!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc1-cN-MDG">
+                                <rect key="frame" x="37" y="30" width="319" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5W7-Z1-7Xo">
+                                <rect key="frame" x="20" y="86" width="353" height="274"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="274" id="S5X-mf-Skt"/>
+                                </constraints>
+                                <string key="text">Welcome to REMSpace, brought to you by Tau-REM! Our app seeks to recommend daytime activities that will improve sleep patterns for people with dementia. You will find a list of three activities, recommended based on what works for you. As the day goes on, check off the activities that you complete!</string>
+                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwH-Bv-OOJ">
+                                <rect key="frame" x="20" y="380" width="353" height="40"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jVH-tF-MqV"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DONE"/>
+                                <connections>
+                                    <action selector="returnToLandingVC" destination="g0u-aM-dc0" eventType="touchUpInside" id="4VO-ix-i7p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="l0v-SH-MY0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5W7-Z1-7Xo" firstAttribute="leading" secondItem="l0v-SH-MY0" secondAttribute="leading" constant="20" id="PvO-2i-MOH"/>
+                            <constraint firstItem="l0v-SH-MY0" firstAttribute="trailing" secondItem="5W7-Z1-7Xo" secondAttribute="trailing" constant="20" id="SFP-kd-gfB"/>
+                            <constraint firstItem="5W7-Z1-7Xo" firstAttribute="centerX" secondItem="B4I-f0-hVF" secondAttribute="centerX" id="X6O-ui-dBD"/>
+                            <constraint firstItem="iwH-Bv-OOJ" firstAttribute="top" secondItem="5W7-Z1-7Xo" secondAttribute="bottom" constant="20" id="bn8-vo-9Zx"/>
+                            <constraint firstItem="l0v-SH-MY0" firstAttribute="trailing" secondItem="iwH-Bv-OOJ" secondAttribute="trailing" constant="20" id="cIM-kk-ddb"/>
+                            <constraint firstItem="5W7-Z1-7Xo" firstAttribute="top" secondItem="Fc1-cN-MDG" secondAttribute="bottom" constant="20" id="hvD-iD-q2c"/>
+                            <constraint firstItem="iwH-Bv-OOJ" firstAttribute="leading" secondItem="l0v-SH-MY0" secondAttribute="leading" constant="20" id="iEJ-Z6-i5U"/>
+                            <constraint firstItem="Fc1-cN-MDG" firstAttribute="centerX" secondItem="B4I-f0-hVF" secondAttribute="centerX" id="qij-9d-0gD"/>
+                            <constraint firstItem="Fc1-cN-MDG" firstAttribute="top" secondItem="B4I-f0-hVF" secondAttribute="top" constant="30" id="rnx-lF-Lf0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0oU-9g-sWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1850" y="-2139"/>
         </scene>
         <!--Sleep Stats View Controller-->
         <scene sceneID="Qhd-RL-Ejm">

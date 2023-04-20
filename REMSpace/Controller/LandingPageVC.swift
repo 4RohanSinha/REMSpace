@@ -89,7 +89,7 @@ class LandingPageVC: CoreDataStackViewController {
     
     @objc func sleepStatsScreen() {
         let sleepLogFetchRequest = SleepLogEntry.fetchRequest()
-        if let sleepLogs = try? dataController?.viewContext.fetch(sleepLogFetchRequest), UserDefaults.standard.bool(forKey: "isLoggedIn") && !isLoadingSleepData {
+        if let sleepLogs = try? dataController?.viewContext.fetch(sleepLogFetchRequest), (UserDefaults.standard.bool(forKey: "isLoggedIn") && !isLoadingSleepData) && sleepLogs.count > 0 {
             performSegue(withIdentifier: "viewSleepStats", sender: sleepLogs)
         }
     }
@@ -209,8 +209,10 @@ extension LandingPageVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let tableView = tableView as? MinMaxTableView, let curActivityName = activitiesFetchedResultsController?.object(at: indexPath).name, indexPath != tableView.maximizedRow {
-            TextToSpeech.speak(msg: curActivityName)
+        if let tableView = tableView as? MinMaxTableView, let curActivityName = activitiesFetchedResultsController?.object(at: indexPath).name {
+            if (indexPath != tableView.maximizedRow) {
+                TextToSpeech.speak(msg: curActivityName)
+            }
             tableView.maximizedRow = indexPath
         }
 
